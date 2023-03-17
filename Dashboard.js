@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import { auth, db, logout } from "./firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
+import Title from "./TodoApp/components/Title";
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
@@ -33,6 +34,7 @@ function Dashboard() {
          <button className="dashboard__btn" onClick={logout}>
           Logout
          </button>
+         <Title></Title>
        </div>
      </div>
   );
